@@ -25,6 +25,7 @@ section h2 {
     padding-bottom: 53px;
     position: relative;
 }
+
 .text-content {
     height: 100%;
     display: flex;
@@ -59,10 +60,11 @@ section h2 {
     color: #7625fb;
     font-weight: 600;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 47%;
+    left: 48%;
     transform: translateX(-50%);
     z-index: 1;
+    white-space: nowrap;
 }
 
 .main-navigation .menu {
@@ -84,6 +86,12 @@ section h2 {
     text-decoration: none;
     font-weight: 600;
     font-size: 1.5625em;
+    padding: 5px;
+}
+
+.main-navigation .menu li:hover {
+    transform: scale(1.5);
+    transition: all 0.4s linear;
 }
 
 .social-media-content {
@@ -91,18 +99,13 @@ section h2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: center;
+    align-items: center;
     position: absolute;
-    
-}
-
-.social-media-content img {
-    width: 45px;
-    height: 40px;
+    left: 0.3%;
 }
 
 .social-media-content .social-icon {
-    width: 45px;
+    width: 40px;
     height: 45px;
     border-radius: 50%;
     background-color: #5c16b7;
@@ -206,47 +209,16 @@ section h2 {
     background: linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(118, 37, 251) 98%);
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     height: 100vh;
     justify-content: space-between;
-    /*    background: rgba(20,50,80,0.70);*/
 }
 
 .section-row {
     display: flex;
-    /*    background: rgba(20,100,120,0.70);*/
-    /*    min-width: 981px;*/
 }
 
 .section-content {
     flex: 1 0 30%;
-    /*    background: rgba(89,50,145,0.70);*/
-}
-
-.services-offer {
-    display: flex;
-    flex-direction: column;
-    flex: 2 0 70%;
-    /*    background: rgba(40,120,50,0.70);*/
-    justify-content: flex-end;
-    color: #FFFFFF;
-    font-family: 'Karla', sans-serif;
-    font-size: .875em;
-    line-height: 25px;
-}
-
-.services-offer p:nth-child(1) {
-    margin-bottom: 25px;
-}
-
-.services-offer p:nth-child(2) {
-    margin-left: 25px;
-}
-
-.services-offer-img {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
 }
 
 .section-content .services-categories ul {
@@ -264,23 +236,52 @@ section h2 {
     font-size: 1.3871em;
 }
 
-.section-content .building-img {
-    height: 223px;
-    width: 100%;
+.services-offer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 2 0 70%;
+    color: #FFFFFF;
+    font-family: 'Karla', sans-serif;
+    font-size: .875em;
+    line-height: 25px;
+}
+
+.contact-services-offer {
+    display: flex;
+    flex-direction: column;
+    flex: 2 0 50%;
+    color: #FFFFFF;
+}
+
+.services-offer .para-start {
+    margin-bottom: 25px;
+}
+
+.services-offer .para-end {
+    margin-left: 25px;
+}
+
+.services-offer-img {
+    height: auto;
     max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 
 /* CONTACT section */
 
 input {
-    order: 2;
     flex: 1 1 auto;
     background-color: transparent;
     border-top: transparent;
     border-left: transparent;
     border-right: transparent;
     border-bottom: 2px solid #ececec;
+    display: block;
+    width: 100%;
 }
 
 input[type=submit] {
@@ -299,13 +300,7 @@ input[type=submit] {
     cursor: pointer;
 }
 
-.contact-form div {
-    display: flex;
-    align-items: center;
-}
-
 label {
-    order: 1;
     color: #ffffff;
     font-size: 1.125em;
     margin-top: 18px;
