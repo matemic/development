@@ -1,3 +1,4 @@
+/* GLOBAL */
 * {
     margin: 0;
     padding: 0;
@@ -14,12 +15,13 @@ section h2 {
     font-size: 3.125em;
     font-weight: 600;
 }
-
 .container {
-    margin: 0 auto;
+    max-width: 1400px;
+    width: 100%;
+    border: 10px solid goldenrod;
 }
-
 .container-content {
+    margin: 0 auto;
     padding-right: 51px;
     padding-left: 51px;
     padding-bottom: 53px;
@@ -35,6 +37,11 @@ section h2 {
     position: relative;
 }
 
+img {
+    height:auto;
+    display: block;
+    max-width: 100%;
+}
 
 /* HEADER */
 
@@ -123,40 +130,47 @@ section h2 {
 /* ABOUT-US section */
 
 .about-us {
-    margin: 0 auto;
     background-color: #f2f2f2;
-}
-
-.about-us .about-content {
     padding: 74px 246px 109px 268px;
 }
 
-.about-content .about-flex-content {
+.about-flex-content {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    width: 100%;
+    margin-top: 60px;
+    
 }
 
 .about-flex-content .about-col>p {
-    margin-top: 30px;
     font-size: .875em;
     line-height: 25px;
 }
 
-.about-flex-content .about-col {
-    flex-basis: 35%;
+.about-flex-content .about-col p:first-child {
+    margin-bottom: 34px;
 }
 
-.about-content .about-flex-content .about-us-img {
-    align-self: flex-end;
+
+.about-flex-content .about-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
+.about-flex-content .about-col-img {
+    flex: 1;
+    margin-left: 102px;
+    
+    
+}
+
+
 
 
 /* Gallery section */
 
 .gallery {
-    width: 100%;
     background-color: #FFFFFF;
 }
 
@@ -166,7 +180,7 @@ section h2 {
     align-items: center;
 }
 
-.gallery .gallery-container h2 {
+.gallery h2 {
     font-size: 3.125em;
     color: #7625fb;
     font-weight: 600;
@@ -185,51 +199,58 @@ section h2 {
 
 .open-hours .open-hours-info {
     padding: 210px 0 76px 270px;
-}
-
-.open-hours .open-hours-info>p {
     font-size: 2.5em;
     font-weight: 400;
     color: #FFFFFF;
     line-height: 25px;
 }
 
+
 .open-hours-info p:after {
-    content: "";
+    content:"\A \A from 8am - 7pm";
+    white-space: pre;
 }
 
 
 /* SERVICES section */
 
 .section-group-content {
-    padding: 116px 249px 131px 270px;
+    padding: 116px 249px  0/*131px*/ 270px;
     background: rgb(255, 255, 255);
     background: -moz-linear-gradient(top, rgb(255, 255, 255) 0%, rgb(118, 37, 251) 98%);
     background: -webkit-linear-gradient(top, rgb(255, 255, 255) 0%, rgb(118, 37, 251) 98%);
     background: linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(118, 37, 251) 98%);
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    justify-content: space-between;
+    align-items: center;
+    
 }
+
 
 .section-row {
     display: flex;
+    max-width: 1400px;
 }
 
 .section-content {
-    flex: 1 0 30%;
+    flex: 1 1 30%;
+    border: 10px solid goldenrod;
 }
 
-.section-content .services-categories ul {
+.services-categories {
+    /* border: 10px solid goldenrod; */
+    flex: 1 1 30%;
+}
+
+ .services-categories ul {
     list-style: none;
 }
 
-.section-content .services-categories li {
+ .services-categories li {
     margin-top: 50px;
 }
 
-.section-content .services-categories li a {
+ .services-categories li a {
     text-transform: uppercase;
     text-decoration: none;
     color: #ffffff;
@@ -239,19 +260,21 @@ section h2 {
 .services-offer {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    flex: 2 0 70%;
+    flex: 2 2 70%;
     color: #FFFFFF;
     font-family: 'Karla', sans-serif;
     font-size: .875em;
     line-height: 25px;
+    margin-top: 50px;
 }
 
 .contact-services-offer {
     display: flex;
     flex-direction: column;
+    align-items:baseline;
     flex: 2 0 50%;
     color: #FFFFFF;
+    border: 10px solid goldenrod;
 }
 
 .services-offer .para-start {
@@ -267,23 +290,14 @@ section h2 {
     max-width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
 }
 
-
+form {
+    display: flex;
+    flex-direction: column;
+    
+}
 /* CONTACT section */
-
-input {
-    flex: 1 1 auto;
-    background-color: transparent;
-    border-top: transparent;
-    border-left: transparent;
-    border-right: transparent;
-    border-bottom: 2px solid #ececec;
-    display: block;
-    width: 100%;
-}
-
 input[type=submit] {
     width: 349px;
     height: 61px;
@@ -296,16 +310,23 @@ input[type=submit] {
     font-size: 1em;
     font-weight: 700;
     letter-spacing: 5px;
-    margin-top: 60px;
     cursor: pointer;
+    margin-top: 59px;
 }
+
+
+input {
+    background-color: transparent;
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+    border-bottom: 2px solid #ececec;
+}
+
 
 label {
     color: #ffffff;
     font-size: 1.125em;
-    margin-top: 18px;
-    white-space: nowrap;
-    user-select: none;
 }
 
 
