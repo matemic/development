@@ -17,8 +17,7 @@ section h2 {
 }
 .container {
     max-width: 1400px;
-    width: 100%;
-    border: 10px solid goldenrod;
+    /* border: 10px solid goldenrod; */
 }
 .container-content {
     margin: 0 auto;
@@ -35,12 +34,6 @@ section h2 {
     justify-content: center;
     align-items: center;
     position: relative;
-}
-
-img {
-    height:auto;
-    display: block;
-    max-width: 100%;
 }
 
 /* HEADER */
@@ -130,39 +123,47 @@ img {
 /* ABOUT-US section */
 
 .about-us {
+    font-size: inherit;
     background-color: #f2f2f2;
     padding: 74px 246px 109px 268px;
 }
 
+.about-us .container {
+    margin-top: 60px;
+}
+
+
 .about-flex-content {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
-    width: 100%;
-    margin-top: 60px;
-    
+    justify-content: space-between;
 }
 
 .about-flex-content .about-col>p {
     font-size: .875em;
-    line-height: 25px;
+    line-height: 1.70em;
 }
 
-.about-flex-content .about-col p:first-child {
-    margin-bottom: 34px;
+.about-col > p:first-child {
+    margin-bottom: 2.43em;
 }
-
-
 .about-flex-content .about-col {
-    flex: 1;
+    flex: 1 1 50%;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    padding-right: 8em;
+    
 }
 .about-flex-content .about-col-img {
-    flex: 1;
-    margin-left: 102px;
+    flex: 0 1 50%;
+    align-self: center;
+    height: auto;
     
-    
+}
+.about-flex-content .about-us-img {
+    max-width: 100%;
+    display: block;
 }
 
 
@@ -176,10 +177,12 @@ img {
 
 .gallery .gallery-container {
     padding: 65px 272px 60px 270px;
+}
+
+.gallery-container > * {
     display: flex;
     align-items: center;
 }
-
 .gallery h2 {
     font-size: 3.125em;
     color: #7625fb;
@@ -330,9 +333,26 @@ label {
 }
 
 
-/* @media screen and (min-width: 120em) {
-    .container {
-        
+@media screen and (max-width: 1438px) {
+    
+    .about-us {
+        padding-left: 134px;
+        padding-right: 134px;
     }
-  
-} */
+    .about-flex-content {
+        flex-direction: column;
+        justify-content: space-between;
+        justify-content: center;
+    }
+    .about-flex-content .about-col {
+        flex-direction: row;
+        padding: 0;
+    }
+    .about-flex-content .about-col > p:first-child {
+        padding-right: 5em;
+        margin-bottom: 0;
+    }
+    .about-col-img {
+        display: none;
+    }
+}
