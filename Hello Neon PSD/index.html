@@ -99,6 +99,7 @@
         </div>
     </section>
     <div class="section-group-content">
+        <div class="container">
         <section class="services">
             <h2>services</h2>
             <div class="section-row">
@@ -133,17 +134,18 @@
                 </div>
             </div>
         </section>
+        </div>
+        <div class="container">
         <section class="contact">
             <h2>contact</h2>
             <div class="section-row">
                 <div class="section-content">
                         <form action="#" method="post">
-                            <label>name
-                            <input id="name" type="text" name="firstname" required/></label>
-                            <label>topic
-                            <input id="topic" type="text" name="topic" required/></label>
-                            <label>e-mail
-                            <input type="email" id="email" name="email" required/></label>
+                            <input id="name" type="text" name="firstname" placeholder="name" aria-label="name" required/>
+                            <div class="data-container">
+                            <input id="topic" type="text" name="topic" placeholder="topic" aria-label="topic" required/>
+                            </div>
+                            <input type="email" id="email" name="email" placeholder="email" aria-label="email" required/>
                             <input type="submit" value="send">           
                         </form>
                 </div>
@@ -155,6 +157,7 @@
                 </div>
             </div>
         </section>
+    </div>
     </div>
 </body>
 
