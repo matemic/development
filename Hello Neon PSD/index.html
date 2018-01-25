@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,52 +13,62 @@
 
 <body>
     <!-- header -->
-    <div class="container">
-        <div class="social-media-content">
+    <div class="social-media-content">
+        <ul>
             <div class="social-icon">
-                <i class="fa fa-pinterest" aria-hidden="true"></i>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-pinterest" aria-hidden="true"></i>
+                    </a>
+                </li>
             </div>
             <div class="social-icon">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                </li>
             </div>
             <div class="social-icon">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                </li>
             </div>
-        </div>
-        <div class="container-content">
-            <!-- social media -->
-            <header class="header">
-                <div class="header-inner">
-                    <div class="text-content">
-                        <h1 class="motto-heading">the time is</h1>
-                        <span class="icon-now">now</span>
-                        <!-- <img class="image-now" src="images/now.svg" alt="the time is now image"> -->
-                        <!-- main navigation -->
-                        <nav class="main-navigation">
-                            <ul class="menu">
-                                <li>
-                                    <a href="#">intro</a>
-                                </li>
-                                <li>
-                                    <a href="#">gallery</a>
-                                </li>
-                                <li>
-                                    <a href="#">services</a>
-                                </li>
-                                <li>
-                                    <a href="#">contact</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+        </ul>
+    </div>
+    <div class="container-content">
+        <header class="header">
+            <div class="header-inner">
+                <div class="text-content">
+                    <h1 class="motto-heading">the time is</h1>
+                    <span class="icon-now">now</span>
+                    <!-- main navigation -->
+                    <nav class="main-navigation">
+                        <ul class="menu">
+                            <li>
+                                <a href="#intro">intro</a>
+                            </li>
+                            <li>
+                                <a href="#gallery">gallery</a>
+                            </li>
+                            <li>
+                                <a href="#services">services</a>
+                            </li>
+                            <li>
+                                <a href="#contact">contact</a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
-        </div>
+            </div>
     </div>
     </header>
     <!-- about us section -->
-    <section class="about-us">
-        <div class="about-content">
-            <h2>we're hello studio.</h2>
+    <section id="intro" class="about-us">
+        <h2>we're hello studio.</h2>
+        <div class="container">
             <div class="about-flex-content">
                 <div class="about-col">
                     <p>Lomo aesthetic lo-fi etsy sustainable cray. Typewriter knausgaard narwhal, vape af tofu occupy pour-over
@@ -65,42 +76,48 @@
                         moon echo park literally brooklyn gentrify, roof party seitan direct trade pickled cronut flexitarian.
                         Try-hard knausgaard biodiesel keffiyeh, 90's yr flexitarian man braid pickled messenger bag PBR&amp;
                         asymmetrical. Listicle vegan XOXO ugh direct trade, single-origin coffee master cleanse scenester.
-                        Lyft neutra godard normcore, swag tacos trust fund meh pitchfork dreamcatcher pork belly.
-                    </p>
+                        Lyft neutra godard normcore, swag tacos trust fund meh pitchfork dreamcatcher pork belly.</p>
                     <p>Offal bitters vaporware yr small batch lomo. Narwhal put a bird on it next level, sriracha lyft fanny
                         pack health goth hashtag bespoke church-key austin photo booth. Keytar activated charcoal pour-over,
                         brooklyn kogi taxidermy vinyl fingerstache. Mumblecore pug craft beer, cliche typewriter leggings
                         fixie pitchfork irony swag. Poke pabst PBR&amp;B, paleo distillery neutra schlitz. Pop-up mustache
                         8-bit authentic fashion axe, neutra marfa blue bottle kickstarter health goth. Organic health goth
-                        lyft, gochujang lomo small batch fingerstache marfa hot chicken.</p>
+                        lyft, gochujang lomo small batch fingerstache marfa hot chicken.
+                    </p>
                 </div>
-                <img class="about-us-img" src="images/about-us.jpg" alt="A girl walking on the desert">
+                <div class="about-col-img">
+                    <img class="about-us-img" src="images/about-us.jpg" alt="A girl walking on the desert">
+                </div>
             </div>
         </div>
     </section>
     <!-- gallery section -->
-    <section class="gallery">
+    <section id="gallery" class="gallery">
         <div class="gallery-container">
-            <h2>gallery</h2>
-            <p>Hoodie leggings offal, heirloom lo-fi pug freegan put a bird on it hella crucifix authentic beard biodiesel letterpress
-                salvia. Man bun direct trade PBR&B small batch biodiesel meditation, roof party letterpress beard tumblr.</p>
+            <div class="container">
+                <h2>gallery</h2>
+                <p>Hoodie leggings offal, heirloom lo-fi pug freegan put a bird on it hella crucifix authentic beard biodiesel
+                    letterpress salvia. Man bun direct trade PBR&B small batch biodiesel meditation, roof party letterpress
+                    beard tumblr.</p>
+            </div>
         </div>
     </section>
     <!-- open hours section -->
     <section class="open-hours">
         <div class="open-hours-info">
-            <p>we're open every day
-                <span class="break-para"> from 8am - 7pm</span>
-            </p>
+            <div class="container">
+                <p>we're open every day
+                </p>
+            </div>
         </div>
     </section>
     <div class="section-group-content">
-        <section class="services">
-            <div class="section-row">
-                <div class="section-content">
+        <div class="container">
+            <section id="services" class="services">
+                <h2>services</h2>
+                <div class="section-row section-row-gap">
                     <aside class="services-categories">
-                        <h2>services</h2>
-                        <ul>
+                        <ul class="services-nav">
                             <li>
                                 <a href="#">Design</a>
                             </li>
@@ -115,47 +132,44 @@
                             </li>
                         </ul>
                     </aside>
-                </div>
-                <div class="services-offer">
-                    <p>Hoodie leggings offal, heirloom lo-fi pug freegan put a bird on it hella crucifix authentic beard biodiesel
-                        letterpress salvia. Man bun direct trade PBR&amp;B small batch biodiesel meditation, roof party letterpress
-                        beard tumblr. Air plant shabby chic helvetica post-ironic messenger bag kickstarter.
-                    </p>
-                    <div class="services-offer-img">
-                        <img class="building-img" src="https://i.imgur.com/yHwnNPk.jpg" alt="A building">
-                        <p class="offer-para-end">Fam crucifix offal, vaporware blue bottle hashtag brunch. Succulents ennui synth letterpress. Organic
-                            next level freegan, viral lumbersexual ennui kinfolk. Twee fixie bitters pop-up, roof party deep
-                            v 3 wolf moon irony etsy man braid fap jean shorts.</p>
+                    <div class="services-offer">
+                        <p class="para-start">Hoodie leggings offal, heirloom lo-fi pug freegan put a bird on it hella crucifix authentic beard
+                            biodiesel letterpress salvia. Man bun direct trade PBR&amp;B small batch biodiesel meditation,
+                            roof party letterpress beard tumblr. Air plant shabby chic helvetica post-ironic messenger bag
+                            kickstarter.
+                        </p>
+                        <div class="services-offer-img">
+                            <img class="building-img" src="https://i.imgur.com/yHwnNPk.jpg" alt="A building">
+                            <p class="para-end">Fam crucifix offal, vaporware blue bottle hashtag brunch. Succulents ennui synth letterpress.
+                                Organic next level freegan, viral lumbersexual ennui kinfolk. Twee fixie bitters pop-up,
+                                roof party deep v 3 wolf moon irony etsy man braid fap jean shorts.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section class="contact">
-            <div class="section-row">
-                <div class="section-content">
-                    <div class="contact-form">
-                        <h2>contact</h2>
-                        <form action="#" method="post">
-                            <input id="name" type="text" name="firstname" required/>
-                            <label for="name">name</label>
-                            <input id="topic" type="text" name="topic" required/>
-                            <label for="topic">topic</label>
-                            <input type="email" id="email" name="email" required/>
-                            <label for="email">e-mail</label>
-                            <input type="submit" value="Send">
+            </section>
+        </div>
+        <div class="container">
+            <section id="contact" class="contact">
+                <h2>contact</h2>
+                <div class="section-row">
+                    <div class="section-content">
+                        <form id="submitForm" action="#" method="post">
+                            <input id="name" type="text" name="firstname" placeholder="name" aria-label="name" required/>
+                            <input id="topic" type="text" name="topic" placeholder="topic" aria-label="topic" required/>
+                            <input type="email" id="email" name="email" placeholder="email" aria-label="email" required/>
                         </form>
                     </div>
-                </div>
-                <div class="services-offer">
-                    <div class="services-content-heading">
+                    <div class="contact-services-offer">
                         <h3>say hello.</h3>
                         <p>Raclette cronut PBR&amp;B, hoodie heirloom blog ethical migas lyft squid jean shorts pinterest succulents
                             fixie synth. Literally skateboard 3 wolf moon organic shabby chic sartorial hell of mumblecore
                             tbh humblebrag. Swag XOXO brunch humblebrag.</p>
                     </div>
                 </div>
-            </div>
-        </section>
+                <input form="submitForm" type="submit" value="send" aria-label="submitForm">
+            </section>
+        </div>
     </div>
 </body>
+
 </html>
