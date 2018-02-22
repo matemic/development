@@ -1,0 +1,25 @@
+
+// Placeholder for setting global properties of each button in the page
+@import 'base/typography';
+@import 'base/colors';
+
+%btn-placeholder {
+    width: 200px;
+    font-size: 1.25rem;
+    padding: 1.18rem;
+    font-family: $raleway;
+    font-weight: $raleway-light;
+    text-transform: uppercase;
+    border: none;
+    color: $secondary-white-color;
+    display: block;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.5);
+    transition: all 0.5s ease;
+    outline: none;
+
+    &:hover {
+        transition: all 0.5s ease;
+        transform: scale(1.2);
+    }
+}
