@@ -13,7 +13,7 @@
 
 <body>
     <div class="header-bg pt-3">
-        <nav class="navigation fixed-top">
+        <div class="bg-nav fixed-top">
             <div class="container">
                 <div class="row align-items-center p-4">
                     <div class="col-lg-6 col-md-4">
@@ -24,7 +24,9 @@
                         </header>
                     </div>
                     <div class="col-lg-6 col-md-8">
-                        <ul class="nav d-flex flex-nowrap justify-content-end">
+                            <nav class="navbar navbar-toggleable-sm navbar-light">
+                                    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                        <ul class="d-sm-block nav d-flex flex-nowrap justify-content-end">
                             <li class="nav-item">
                                 <a class="nav-link pl-lg-3 pl-md-0" href="#home">Home</a>
                             </li>
@@ -45,8 +47,14 @@
                             </li>
                         </ul>
                     </div>
+                    </nav>
                 </div>
-        </nav>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                </div>
+        </div>
+        </div>
         <section id="home" class="home">
             <div class="container">
                 <div class="row flex-column justify-content-center align-items-start">
