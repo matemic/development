@@ -1,5 +1,10 @@
 /* Set up global properties for <p> and <h2> markups */
 
+input {
+    outline: none;
+    display: block;
+}
+
 .para {
     font-family: $raleway;
     font-size: $para-size;
@@ -13,5 +18,14 @@
     font-size: $h2-size;
 }
 
+.img-container {
+    position: relative;
+    transition: all 0.7s ease;
+}
 
-
+.img-container:hover {
+    box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s ease;
+    transform: scale(1.2);
+    z-index: 999;
+}

@@ -8,7 +8,7 @@
 
 .gallery-view-more-btn {
     @include btn-style($btn-gallery-color);
-   margin: 4rem auto;
+    margin: 4rem auto;
 }
 
 /* subscribe submit button */
@@ -18,7 +18,7 @@
     width: 170px;
     padding: 1.06rem 2.06rem;
     position: absolute;
-    right: -34%;
+    right: -45%;
     z-index: 1;
     cursor: pointer;
 }
@@ -29,6 +29,3 @@
     @include btn-style($btn-blog-color);
     margin: 0 auto;
 }
-
-
-

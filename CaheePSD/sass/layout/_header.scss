@@ -1,12 +1,11 @@
 /* Styles for header */
 
 .header-bg {
-    height: 100vh;
+    min-height: 100vh;
     background-image: url(../images/header-bg-min.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    
 }
 
 .header h1 {
@@ -19,27 +18,91 @@
     text-decoration: none;
 }
 
-.bg-nav {
-    background-color: #f9f8fb;
+.navigation {
+    background-color: rgba(249, 248, 253, 0.9);
+    height: 10vh;
 }
+
 .nav-item a {
     font-family: $raleway;
-    color:$primary-dark-color;
+    color: $primary-dark-color;
     font-weight: $raleway-bold;
     text-decoration: none;
     text-transform: uppercase;
     position: relative;
-    
- &:hover:before {
-     content: '';
-     height: 3px;
-     width: 70%;
-     background-color: $accent-orange;
-     display: block;
-     position: absolute;
-     top: 0;
-     left: 50%;
-     transform: translateX(-50%);
+    overflow: hidden;
+    &:hover:before {
+        content: '';
+        height: 3px;
+        width: 80%;
+        background-color: $accent-orange;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
 
- }
+@media screen and (max-width: 991px) {
+    .header {
+        margin: 0 auto;
+    }
+    .header a {
+        font-size: 3rem;
+    }
+    .navbar-collapse {
+        min-height: 100vh;
+        transition: height 0.2s ease;
+        width: 100%;
+        position: relative;
+        animation: showMenu 0.5s forwards;
+    }
+    .navigation {
+        height: auto;
+    }
+    .nav-item {
+        height: 100%;
+        align-items: center;
+        font-size: 2.5rem;
+        display: flex;
+        justify-content: center;
+    }
+    .nav-item a {
+        flex-basis: 100%;
+        text-align: center;
+        padding: 2rem;
+        transition: all .4s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .nav-item a:hover {
+        background: #262626;
+        color: white;
+        transition: all .4s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .nav-item a:hover:before {
+        content: none;
+    }
+    .navbar-toggler {
+        outline: none !important;
+        transition: all 0.2s ease;
+        &:hover {
+            box-shadow: 2px 2px 0 0 rgba(95, 93, 93, 0.60);
+            transition: all 0.2s ease;
+        }
+    }
+}
+
+@keyframes showMenu {
+    0% {
+        opacity: 0;
+        left: 0;
+    }
+    50% {
+        opacity: 1;
+        left: -400px
+    }
+    100% {
+        opacity: 1;
+        left: 0;
+    }
 }

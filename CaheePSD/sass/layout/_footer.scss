@@ -2,20 +2,18 @@
 
 .footer {
     padding: 1.312rem;
-    background-color:$primary-dark-color;
-
+    background-color: $primary-dark-color;
+    text-align: center;
     & p {
         color: #b9b9b9;
         font-family: $raleway;
         font-weight: $raleway-light;
         font-size: .937rem;
     }
-
     & .cahee-logo {
         font-family: $pacifico;
         font-size: 1.562rem;
     }
-
     .love-highlighted {
         color: #ff2b58;
         font-weight: bold;

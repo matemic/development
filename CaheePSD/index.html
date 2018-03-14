@@ -7,26 +7,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Pacifico|Raleway:300,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/main-min.css" />
     <title>Cahee PSD page</title>
 </head>
 
 <body>
-    <div class="header-bg pt-3">
-        <div class="bg-nav fixed-top">
-            <div class="container">
-                <div class="row align-items-center p-4">
-                    <div class="col-lg-6 col-md-4">
+    <div id="home" class="header-bg pt-3">
+        <nav class="navbar navbar-expand-lg navigation navbar-light fixed-top p-4">
                         <header class="header">
                             <h1>
-                                <a href="#home">Cahee</a>
+                                <a class="p-lg-5" href="#home">Cahee</a>
                             </h1>
                         </header>
-                    </div>
-                    <div class="col-lg-6 col-md-8">
-                            <nav class="navbar navbar-toggleable-sm navbar-light">
-                                    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                        <ul class="d-sm-block nav d-flex flex-nowrap justify-content-end">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                              </button>
+                        <div class="collapse navbar-collapse" id="mainNavbar">
+                        <ul class="nav ml-lg-auto mr-lg-5 d-block d-lg-flex">
                             <li class="nav-item">
                                 <a class="nav-link pl-lg-3 pl-md-0" href="#home">Home</a>
                             </li>
@@ -46,42 +43,34 @@
                                 <a class="nav-link pl-lg-3 pl-md-1" href="#contact">Contact</a>
                             </li>
                         </ul>
-                    </div>
-                    </nav>
-                </div>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                      </button>
-                </div>
-        </div>
-        </div>
-        <section id="home" class="home">
+            </div>
+        </nav>
+        <section class="home">
             <div class="container">
-                <div class="row flex-column justify-content-center align-items-start">
-                    <div class="home-content d-flex flex-column justify-content-center col-lg-4 col-md-12">
+                <div class="row flex-column justify-content-center align-items-center align-items-md-start">
+                    <div class="home-content d-flex flex-column justify-content-center col-12 col-md-8 col-lg-4">
                         <h2 class="header-intro">Fresh Life</h2>
                         <p class="para">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
                             nostrud exercitation ullamco.
                         </p>
                         <button class="get-free-now-btn">Get free now</button>
                     </div>
-                    <div class="scroll-down">
+                    <button class="scroll-down">
                         <a class="scroll-down-link" href="#about">
-                        <img src="images/scroll-down.png" alt="Button to scroll down a page"></a>
-                    </div>
+                            <img class="scroll-img" src="images/scroll-down.png" alt="Button to scroll down a page">
+                        </a>
+                    </button>
                 </div>
-            </div>
             </div>
         </section>
     </div>
-    </div>
     <section id="about" class="about-us">
         <div class="container">
-            <div class="about-content align-items-center row">
-                <div class="col-lg-5 md-2 order-md-2">
-                    <img src="images/about-us-img-min.png" alt="Raspberries on the plate">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-6 order-2 order-lg-1">
+                    <img class="img-fluid" src="images/about-us-img-min.png" alt="Raspberries on the plate">
                 </div>
-                <div class="d-flex flex-column col-lg-5 offset-lg-2 offset-md-0 order-md-1">
+                <div class="d-flex flex-column col-12 col-lg-6 order-1">
                     <h2 class="h2-heading">About Us</h2>
                     <p class="para">Abore Cahee magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
                         aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
@@ -89,34 +78,42 @@
                         laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.</p>
                 </div>
             </div>
-        </div>
+    </div>
     </section>
     <section id="our-services" class="our-services">
         <div class="container">
             <div class="services-content align-items-center row">
-                <div class="col-lg-6">
+                <div class="col-12 col-lg-5 order-2 order-lg-1">
                     <ul class="d-flex flex-column services list-unstyled">
                         <li class="services-item">
-                            <div class="bg-products bg-online-shopping"></div>
+                            <div class="row-item">
                             <a href="#">Online Shopping</a>
+                            <div class="bg-products bg-online-shopping"></div>
+                            </div>
                         </li>
                         <li class="services-item">
-                            <div class="bg-products bg-quality-product"></div>
+                            <div class="row-item">
                             <a href="#">Quality Product</a>
+                            <div class="bg-products bg-quality-product"></div>
+                            </div>
                         </li>
                         <li class="services-item pr-5">
+                            <div class="row-item">
+                            <a class="domestic-international" href="#">Domestic & International <span>Delivery</span></a>
                             <div class="bg-products bg-international-delivery"></div>
-                            <a href="#">Domestic & International</a>
+                        </div>
                         </li>
                         <li class="services-item">
+                            <div class="row-item">
                             <div class="bg-products bg-well-organized"></div>
                             <a href="#">Well Organized</a>
+                        </div>
                         </li>
                     </ul>
                 </div>
-                <div class="col-lg-6 d-flex">
+                <div class="col-12 col-lg-6 offset-0 offset-lg-1 order-1">
                     <h2 class="h2-heading">Our Services</h2>
-                    <img class="section-img" src="images/services-img-min.png" alt="Oranges">
+                    <img class="d-block mx-auto section-img img-fluid" src="images/services-img-min.png" alt="Oranges">
                 </div>
             </div>
         </div>
@@ -131,33 +128,31 @@
                 </div>
             </div>
             <div class="justify-content-between row">
-                <div class="col-lg-8">
-                    <img class="img-fluid" src="images/img1-min.png" alt="Peaches and knife lying on the white plate">
+                <div class="col-12 col-md-8 col-lg-8 pb-3 pb-md-0">
+                    <img class="img-container img-fluid" src="images/img1-min.png" alt="Peaches and knife lying on the white plate">
                 </div>
-                <div class="col-lg-4 d-flex flex-column justify-content-between col-lg-4">
-                    <img class="img-fluid" src="images/img2-min.png" alt="An image presents blueberries in a bowl">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <img class="img-fluid" src="images/img3-min.png" alt="A couple of blackberries">
-                        </div>
-                    </div>
+                <div class="col-12 col-md-4 col-lg-4 d-flex flex-column justify-content-between">
+                    <img class="img-container img-fluid mb-3 mb-md-0" src="images/img2-min.png" alt="An image presents blueberries in a bowl">
+                    <img class="img-container img-fluid" src="images/img3-min.png" alt="A couple of blackberries">
                 </div>
             </div>
-            <div class="row pt-4">
-                <div class="col-lg-6">
-                    <img class="img-fluid" src="images/img4-min.png" alt="Strawberries falling into milk">
+            <div class="row pt-3">
+                <div class="col-12 col-md-6 col-lg-6">
+                    <img class="img-container img-fluid" src="images/img4-min.png" alt="Strawberries falling into milk">
                 </div>
-                <div class="col-lg-6">
-                    <img class="img-fluid" src="images/img5-min.png" alt="Ripe fruit">
+                <div class="col-12 col-md-6 col-lg-6 pt-3 pt-md-0">
+                    <img class="img-container img-fluid" src="images/img5-min.png" alt="Ripe fruit">
                 </div>
             </div>
             <button class="gallery-view-more-btn">View more</button>
         </div>
     </section>
+    <div class="subscribe-bg">
+        <div class="subscribe-bg-overlay">
     <aside class="subscribe">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6">
+                <div class="col-12 col-lg-6">
                     <h2 class="h2-heading">Subscribe To Us</h2>
                     <p class="para">Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
                         aliqua. Ut enim ad minim veniam.</p>
@@ -168,23 +163,22 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-lg-6">
-                    <img class="" src="images/subscribe-img-min.png">
                 </div>
             </div>
-        </div>
-    </aside>
+        </aside>
+    </div>
+    </div>
     <section id="blog" class="blog">
         <div class="container">
             <div class="justify-content-center row">
-                <div class="d-flex flex-column align-items-center col-lg-7">
+                <div class="d-flex flex-column align-items-center col-lg-8">
                     <h2 class="h2-heading pb-3">Blog</h2>
                     <p class="para py-3">Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
                         ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4">
+                <div class="col-md-6 col-lg-4 d-flex justify-content-center">
                     <div class="img-container">
                         <img class="img-fluid" src="images/img1-blog-min.png" alt="Green smoothies image: Too much of a Good Thing?">
                         <div class="img-overlay">
@@ -196,13 +190,13 @@
                             <div class="img-title">
                                 <h3>Green Smoothies: Too Much of a Good Thing?</h3>
                                 <p class="img-author">By Auskteez -
-                                    <time>2 hours ago</time>
+                                    2 hours ago
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-md-6 pt-3 pt-md-0 col-lg-4 d-flex justify-content-center">
                     <div class="img-container">
                         <img class="img-fluid" src="images/img2-blog-min.png" alt="Growing food image">
                         <div class="img-overlay">
@@ -214,13 +208,13 @@
                             <div class="img-title">
                                 <h3>Growing Food and a "Thirst" for Innovation</h3>
                                 <p class="img-author">By Auskteez -
-                                    <time>2 hours ago</time>
+                                    2 hours ago
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-md-12 col-lg-4 pt-3 pt-lg-0 d-flex justify-content-center">
                     <div class="img-container">
                         <img class="img-fluid" src="images/img3-blog-min.png" alt="Pesticides and food: What you need to know">
                         <div class="img-overlay">
@@ -232,7 +226,7 @@
                             <div class="img-title">
                                 <h3>Pesticides &amp; Food: What You Need to Know</h3>
                                 <p class="img-author">By Auskteez -
-                                    <time>2 hours ago</time>
+                                    2 hours ago
                                 </p>
                             </div>
                         </div>
@@ -245,24 +239,38 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="d-flex justify-content-center row">
-                <div class="d-flex flex-column align-items-center col-lg-7">
+                <div class="d-flex flex-column align-items-center col-lg-8">
                     <h2 class="h2-heading pb-3">Contact</h2>
                     <p class="para py-3">For new projects, ideas, business or anything you'd like to discuss, contact with me!</p>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-12 col-lg-6 order-2 order-lg-1">
                     <form>
-                        <div class="form-content">
-                            <input class="my-2 placeholder" type="text" placeholder="Auskteez Tran">
-                            <input class="my-2 placeholder" type="email" placeholder="Your email...">
-                            <input class="my-2 placeholder" type="tel" placeholder="Your phone number...">
-                            <textarea class="my-2 placeholder" placeholder="Your message..."></textarea>
+                        <div class="row">
+                            <div class="d-flex justify-content-center col-12">
+                                <input class="my-2 placeholder" type="text" placeholder="Auskteez Tran">
+                            </div>
+                        </div>
+                        <div class="row  justify-content-center">
+                            <div class="d-flex justify-content-center col-12">
+                                <input class="my-2 placeholder" type="email" placeholder="Your email...">
+                            </div>
+                        </div>
+                        <div class="row  justify-content-center">
+                            <div class="d-flex justify-content-center col-12">
+                                <input class="my-2 placeholder" type="tel" placeholder="Your phone number...">
+                            </div>
+                        </div>
+                        <div class="row  justify-content-center">
+                            <div class="d-flex justify-content-center col-12">
+                                <textarea class="my-2 placeholder" placeholder="Your message..."></textarea>
+                            </div>
                         </div>
                     </form>
                 </div>
-                <div class="contact-info col-lg-4 offset-lg-2">
-                    <h3>Address</h3>
+                <div class="text-center text-lg-left contact-info order-1 order-lg-2 col-md-12 col-lg-4 offset-lg-2">
+                    <h3 class="">Address</h3>
                     <p class="para">123 City Name, Street, City, Country</p>
                     <h3>Email</h3>
                     <p class="para">cahee@domain.com</p>
@@ -275,25 +283,25 @@
     <footer class="footer">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-4">
+                <div class="col-md-5 col-lg-4">
                     <p>&copy; 2015 Company. All right reserved.</p>
                 </div>
-                <div class="col-lg-3 offset-lg-1">
+                <div class="col-md-2 offset-0 col-lg-3 offset-lg-1">
                     <p class="cahee-logo">Cahee</p>
                 </div>
-                <div class="col-lg-3 offset-lg-1">
+                <div class="col-md-5 offset-0 col-lg-3 offset-lg-1">
                     <p>Made with
                         <span class="love-highlighted">love</span> by Auskteez</p>
                 </div>
             </div>
         </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+    <script src="js/general.js"></script>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
-    crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
-    crossorigin="anonymous"></script>
-<script src="js/general.js"></script>
 
 </html>
