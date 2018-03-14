@@ -1,6 +1,4 @@
-
 // Mixin for setting up the background of each button in the page
-
 @mixin btn-style($background) {
     @extend %btn-placeholder;
     background-color: $background;
@@ -8,4 +6,3 @@
         background-color: darken($background, 10%);
     }
 }
-

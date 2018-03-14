@@ -1,29 +1,40 @@
 /* Styles for services section */
 
 .our-services {
-    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
     background-color: #70bfff;
     color: #FFFFFF;
-    
     & .h2-heading {
         position: absolute;
         top: 46%;
-        transform: translateY(-50%);
+        white-space: nowrap;
+        left: 50%;
+        transform: translate(-56%, -50%);
     }
 }
 
 .services {
-    
     & .services-item {
+        min-width: 250px;
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 400px;
+        text-align: center;
         height: 100px;
         background-color: $secondary-white-color;
         margin-bottom: 1.312rem;
-        box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.5);
+        box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.5);
         position: relative;
+        &:hover {
+            animation: shake 1s ease-in-out forwards;
+        }
+    }
+    & .services-item .row-item {
+        width: 70%;
+        display: flex;
+        align-items: inherit;
     }
     & .services-item a:before {
         content: '';
@@ -34,37 +45,108 @@
         right: 25%;
         display: block;
         background-color: #9d9d9d;
-
     }
     & .services-item a {
         font-size: 1.25rem;
         font-family: $raleway;
         font-weight: $raleway-bold;
-        color:$primary-dark-color;
+        color: $primary-dark-color;
         text-decoration: none;
+        cursor: default;
     }
-    
+    & .services-item span:before {
+        content: '\A';
+        white-space: pre;
+    }
 }
 
 .bg-products {
     position: absolute;
-    right: 3%;
+    right: 4%;
 }
+
 .bg-quality-product {
-    width: 81px; 
+    width: 81px;
     height: 71px;
     background: url('../images/icon-sprites.png') -111px -10px;
 }
+
 .bg-well-organized {
-    width: 81px; height: 75px;
+    width: 81px;
+    height: 75px;
     background: url('../images/icon-sprites.png') -10px -10px;
 }
 
 .bg-international-delivery {
-    width: 81px; height: 68px;
+    width: 81px;
+    height: 68px;
     background: url('../images/icon-sprites.png') -10px -105px;
 }
+
 .bg-online-shopping {
-    width: 81px; height: 68px;
+    width: 81px;
+    height: 68px;
     background: url('../images/icon-sprites.png') -111px -105px;
+}
+
+@media screen and (max-width: 1200px) {
+    .our-services {
+        padding: 3rem 0.5rem;
+        & .h2-heading {
+            font-size: 4.25rem;
+        }
+        & .services-item a {
+            font-size: 1.1rem;
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .our-services {
+        & .h2-heading {
+            font-size: 4.25rem;
+        }
+    }
+    .bg-products {
+        position: absolute;
+        right: 6%;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .our-services {
+        & .h2-heading {
+            font-size: 3rem;
+            left: 55%;
+        }
+        .bg-products {
+            position: absolute;
+            right: 6%;
+        }
+        .services-item {
+            justify-content: start;
+        }
+        & .services-item a {
+            font-size: 1rem;
+            margin-left: 1.5rem;
+        }
+        .services .services-item a:before {
+            right: 35%;
+        }
+    }
+}
+
+@keyframes shake {
+    0% {
+        top: 10px;
+    }
+    30% {
+        top: 0;
+    }
+    70% {
+        top: 10px
+    }
+    100% {
+        top: 0;
+    }
 }

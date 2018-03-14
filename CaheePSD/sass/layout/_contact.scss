@@ -1,18 +1,17 @@
 /* Styles for contact section */
 
 .contact {
-    padding: 5rem;
-    height: 100%;
+    padding: 3rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
     background-image: url(../images/contact-bg-min.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     color:$primary-dark-color;
     
-    & .form-content {
-        display: flex;
-        flex-direction: column;
-    }
     & input,textarea {
+        min-width: 200px;
         font-family: $raleway;
         font-weight: $raleway-light;
         font-size: .937rem;
@@ -20,13 +19,16 @@
         padding: 1.187rem;
         background-color: rgba(0, 196, 196, 0.5);
         border: 0;
-        color: $secondary-white-color;
         outline: none;
+        resize: none;
+        transition: all 0.2s cubic-bezier(0.43, 0.32, 0.16, 0.9);
         
         &:hover, &:focus {
             background-color: rgba(0, 196, 196, 1);
             font-weight: $raleway-bold;
             border-left: 5px solid #355b82;
+            transition: all 0.2s cubic-bezier(0.43, 0.32, 0.16, 0.9);
+            color: $secondary-white-color;
         }
     }
     & textarea {
@@ -36,9 +38,20 @@
 .contact .placeholder::-webkit-input-placeholder, {
     color: #FFF;
 }
+.contact .placeholder::-moz-input-placeholder, {
+    color: #FFF;
+}
 .contact-info h3 {
         font-family: $raleway;
         font-weight: $raleway-bold;
         font-size: 1.25rem;
         color:$primary-dark-color;
+}
+@media screen and (max-width: 450px) {
+    .contact {
+        padding: 2rem 1.5rem;
+    }
+    .contact .h2-heading {
+        font-size: 3.825rem;
+    }
 }

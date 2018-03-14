@@ -1,20 +1,44 @@
 /* Styles for subscribe aside section */
 
-.subscribe {
-    height: 100%;
-    padding: 10rem;
-    background-color: #ffffff;
-    color:$primary-dark-color;
+.subscribe-bg {
+    background-image: url(../images/subscribe-bg-min.jpg);
+    background-position: 70%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
+.subscribe {
+    padding: 8rem;
+    color: $primary-dark-color;
     & .h2-heading {
         font-size: 2.5rem;
     }
-   
     & .form-content {
         display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
     }
     & input[type=email] {
         flex-basis: 100%;
         padding: 1.187rem;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .subscribe {
+        color: #FFF;
+    }
+    .subscribe-bg-overlay {
+        background-color: rgba(89, 60, 123, 0.9);
+    }
+    .subscribe-us-btn {
+        position: static !important;
+        margin: 2rem auto;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .subscribe {
+        padding: 2rem 0.5rem;
     }
 }

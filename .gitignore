@@ -1,6 +1,10 @@
 
 # Created by https://www.gitignore.io/api/visualstudiocode
 
+
+**/node_modules
+
+
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
@@ -8,6 +12,7 @@
 !.vscode/launch.json
 !.vscode/extensions.json
 .history
+
 
 
 # End of https://www.gitignore.io/api/visualstudiocode

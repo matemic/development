@@ -1,11 +1,25 @@
 /* Styles for about section */
 
 .about-us {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
     background-color: #00b2b2;
-    color:  $secondary-white-color;
+    color: $secondary-white-color;
+}
 
-    & .about-content {
-        height: 100vh;
+@media screen and (max-width: 1220px) {
+    .about-us {
+        padding: 7rem 0.5rem;
     }
+    .about-us .h2-heading {
+        text-align: center;
+        white-space: nowrap;
+    }
+}
 
+@media screen and (max-width: 450px) {
+    .about-us .h2-heading {
+        font-size: 3.825rem;
+    }
 }

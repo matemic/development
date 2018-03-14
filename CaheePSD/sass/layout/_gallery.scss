@@ -1,11 +1,24 @@
 /* Styles for gallery section */
 
 .gallery {
-    padding-bottom: 1rem;
+    padding-top: 7rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
     background-color: #ffe92f;
-    color:$primary-dark-color;
+    color: $primary-dark-color;
+}
 
-    & .h2-heading {
-        padding-top: 4.25rem;
+@media screen and (max-width: 1300px) {
+    .gallery .img-container:hover {
+        transform: scale(1.1);
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .gallery .h2-heading {
+        text-align: center;
+        font-size: 3.825rem;
+        white-space: nowrap;
     }
 }
