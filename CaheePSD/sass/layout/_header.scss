@@ -64,14 +64,14 @@
     .nav-item {
         height: 100%;
         align-items: center;
-        font-size: 2.5rem;
+        font-size: 1.5rem;
         display: flex;
         justify-content: center;
     }
     .nav-item a {
         flex-basis: 100%;
         text-align: center;
-        padding: 2rem;
+        padding: 0.6rem;
         transition: all .4s cubic-bezier(0.23, 1, 0.32, 1);
     }
     .nav-item a:hover {
