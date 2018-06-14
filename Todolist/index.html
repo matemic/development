@@ -14,26 +14,20 @@
         <div class="form-wrapper">
         <form class="todo-form" autocomplete="off">
         <div class="form-row">
-            <label>Szukej taska</label>
-            <input type="text" id="todo-filter">
             <div class="title">
              <label for="description">Description</label>
              <p class="counter"></p>
              <div class="warning"></div>
              </div>
-             <input type="text" placeholder="What would you like to do today?" class="description" id="description"/>
+             <input type="text" placeholder="What would you like to do today?" 
+             class="description" id="description" required/>
              <div class="task-filter"></div>
             </div>
         <input id="submit" type="submit" value="Add task">
         </form>
         <h2>To do</h2>
-        <ul class="todos-list">
-            <li class="list-item">
-                <input type="button" class="btn-delete"><span>X</span>
-                </input>
-                <input id="item" type="checkbox" class="checkbox">
-                <label for="item" class="todo-item">12345</label>
-            </li>        
+        <ul class="todos-list"> 
+           
         </ul>
     </div>
       </div>

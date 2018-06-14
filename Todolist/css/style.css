@@ -105,6 +105,7 @@
   background: 0;
   vertical-align: middle;
   margin-right: 0.3rem;
+
   }
   .checkbox:checked + .todo-item::after {
     content: "";
@@ -120,6 +121,9 @@
     top: 8px;
     transform: rotate(-45deg);
   }
+  .checkbox:checked + .todo-item {
+    text-decoration: line-through;
+  }
   
   .todos-list .list-item {
     /* background: rgba(177, 176, 177, 1); */
@@ -133,10 +137,6 @@
 
   .todo-text {
     word-break: break-all;
-  }
-  
-  .todo-done {
-    text-decoration: line-through;
   }
   
   .buttons {
