@@ -3,12 +3,13 @@ const ToDoList = (function () {
   const btnSubmit = document.getElementById('submit');
   const ulList = document.querySelector('.todos-list');
   const counter = document.querySelector('.counter');
+  const btnClearAll = document.querySelector('.btn-clear-all');
+  const error = document.querySelector('.error');
   const form = document.querySelector('.todo-form');
   const todos = JSON.parse(localStorage.getItem('todos')) || [];
-  inputField.focus();
   counter.textContent = `${todos.length} items left`;
 
-  const updateTodosCount = () => {
+  const updateTodosCount = (todos) => {
     counter.textContent = `${todos.length} items left`;
     localStorage.setItem('todos', JSON.stringify(todos));
   }
@@ -16,7 +17,7 @@ const ToDoList = (function () {
   const removeTodo = (element) => {
     const id = element.getAttribute('data-id');
     todos.splice(id, 1);
-    updateTodosCount();
+    updateTodosCount(todos);
     updateList(todos);
     localStorage.setItem('todos', JSON.stringify(todos));
   }
@@ -27,11 +28,22 @@ const ToDoList = (function () {
     localStorage.setItem('todos', JSON.stringify(todos));
   }
 
+  function throwError() {
+    inputField.classList.add('invalid');
+    error.classList.add('active');
+    error.textContent = 'You have to add something!';
+    setTimeout(() => {
+      inputField.classList.remove('invalid');
+      error.classList.remove('active');
+    }, 1300);
+  }
+
   function validateInput(evt) {
     evt.preventDefault();
     const inputValue = inputField.value;
 
     if (!inputValue.trim()) {
+      throwError();
       return;
     }
     addTask(inputValue);
@@ -39,6 +51,7 @@ const ToDoList = (function () {
   }
 
   function updateList(todos) {
+    console.log(todos);
     ulList.innerHTML = '';
     todos.forEach((item, index) => {
       const listItem = createTodosList(item, index);
@@ -55,7 +68,7 @@ const ToDoList = (function () {
     }
     todos.push(item);
     updateList(todos);
-    updateTodosCount();
+    updateTodosCount(todos);
     localStorage.setItem('todos', JSON.stringify(todos));
 
   }
@@ -76,16 +89,20 @@ const ToDoList = (function () {
   const createTodosList = (item, index) => {
     const li = createElements('list-item');
     const divBtn = createElements('buttons', 'div');
-    const btnDelete = createElements('btn-delete', 'button', '', {'data-id': index});
+    const btnDelete = createElements('btn-delete', 'button', '', {
+      'data-id': index
+    });
     const todoCheckbox = createElements('checkbox', 'input', '', {
       'id': index,
       'type': 'checkbox'
     });
-    const todoLabel = createElements('todo-item', 'label', item.todo, {'for': index});
+    const todoLabel = createElements('todo-item', 'label', item.todo, {
+      'for': index
+    });
     const divAddedTime = createElements('added-time date', 'div', item.date);
 
-   
-    if(item.done) {
+
+    if (item.done) {
       todoCheckbox.setAttribute('checked', '');
     }
     li.appendChild(divBtn);
@@ -110,6 +127,7 @@ const ToDoList = (function () {
   }
 
   form.addEventListener('submit', validateInput);
+  // btnClearAll.addEventListener('click', clearAllTodos);
 
   function delegate(type, parent, targetSelector, callback) {
     parent.addEventListener(type, event => {
