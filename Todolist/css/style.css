@@ -1,16 +1,19 @@
+  /* GLOBAL */
+
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     list-style: none;
   }
+
   .bg {
     height: 100vh;
     background-image: url('../images/bg.jpg');
     background-size: cover;
     background-position: center;
   }
-  
+
   .wrapper {
     display: flex;
     flex-direction: column;
@@ -18,96 +21,178 @@
     max-width: 650px;
     margin: auto;
   }
+
+  .btn {
+    text-transform: uppercase;
+    border: 1px solid #03827c;
+    color: #03827c;
+    border-radius: 5px;
+    padding: 1rem;
+    letter-spacing: 3px;
+  }
+
+  /* FORM styles */
+
   .form-wrapper {
     background-color: #FFF;
     border-radius: 3px;
     padding: 2rem;
-    box-shadow: 3px 3px 10px 3px rgba(0,0,0,0.75);
+    box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.75);
     margin-top: 1rem;
-
+    margin: 0.5rem 0;
   }
+
   .todo-form {
     display: flex;
     flex-direction: column;
   }
-  .form-row {
-    margin: 0.5rem 0;
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
-  .form-row label {
+
+  .counter {
+    font-size: 0.8rem;
+    background-color: #03827c;
+    color: #FFF;
+  }
+
+  .form-title {
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
     font-size: 1.2rem;
-    margin: 0.7rem 0;
+    margin-bottom: 0.7rem;
   }
+
   .description {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-size: 1.2rem;
     width: 100%;
-    padding-bottom: 4rem;
+    padding-bottom: 0.6rem;
     outline: none;
-    border: 1px solid rgba(157, 157, 160, 0.38);
-    transition: all 0.3s linear;
-  }
-  .description:focus {
-    border: 1px solid rgba(157, 157, 160, 0.38);
-    transition: all 0.3s linear;
-  }
-  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    padding: 1rem 8rem;
-    font-size: 1rem;
-  }
-  ::-moz-placeholder { /* Firefox 19+ */
-    padding: 1rem 8rem;
-    font-size: 1rem;
-  }
-  :-ms-input-placeholder { /* IE 10+ */
-    padding: 1rem 8rem;
-    font-size: 1rem;
-  }
-  input:-moz-placeholder { /* Firefox 18- */
-    padding: 1rem 8rem;
-    font-size: 1rem;
-  }
-  input[type=submit] {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-    width: 150px;
-    padding: 1rem;
-    align-self: flex-end;
     border: 0;
-    background: #03827c;
-    color: #FFF;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    cursor: pointer;
+    border-bottom: 1px solid rgba(157, 157, 160, 0.38);
+    box-shadow: none;
+    transform: scale(1);
+    transition: all 0.3s ease;
   }
+
+  .description:focus {
+    border-bottom: 1px solid rgba(50, 126, 101, 0.38);
+    transition: all 0.3s ease;
+  }
+
+  .description:required:focus {
+    box-shadow: none;
+  }
+
+  .error {
+    display: none;
+  }
+
+  .error.active {
+    display: block;
+    color: rgb(253, 93, 93);
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .description.invalid {
+    border-bottom: 2px solid rgba(251, 101, 101, 0.959);
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    animation: vibrate 0.2s ease;
+  }
+
+  @keyframes vibrate {
+    0% {
+      transform: translate(0);
+    }
+    50% {
+      transform: translateY(20px);
+    }
+    100% {
+      transform: translateY(10px);
+    }
+  }
+
+  ::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    padding: 1rem 8rem;
+    font-size: 1rem;
+  }
+
+  ::-moz-placeholder {
+    /* Firefox 19+ */
+    padding: 1rem 8rem;
+    font-size: 1rem;
+  }
+
+  :-ms-input-placeholder {
+    /* IE 10+ */
+    padding: 1rem 8rem;
+    font-size: 1rem;
+  }
+
+  input:-moz-placeholder {
+    /* Firefox 18- */
+    padding: 1rem 8rem;
+    font-size: 1rem;
+  }
+
+  .btn-clear-all,
+  input[type=submit] {
+    margin: 1.5rem 0 1rem 0;
+    background: #FFF;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s linear;
+  }
+
+  input[type=submit] {
+    margin: 1.5rem 0 1rem 0;
+    width: 150px;
+  }
+
+  input[type=submit]:hover,
+  input[type=submit]:focus,
+  .btn-clear-all:hover,
+  .btn-clear-all:focus {
+    color: #FFF;
+    background-color: #03827c;
+    transition: all 0.2s linear;
+  }
+
+  /* Styles for javascript generated markups */
+
   .checkbox {
     display: none;
-    
   }
+
   .todo-item {
     position: relative;
     display: inline-block;
     cursor: pointer;
   }
-  
-.checkbox + .todo-item::before {
-  content: "";
-  width: 19px;
-  height: 19px;
-  border: 2px solid #03827c;
-  color: #03827c;
-  border-radius: 50%;
-  display: inline-block;
-  background: 0;
-  vertical-align: middle;
-  margin-right: 0.3rem;
 
+  .checkbox+.todo-item::before {
+    content: "";
+    width: 19px;
+    height: 19px;
+    border: 2px solid #03827c;
+    color: #03827c;
+    border-radius: 50%;
+    display: inline-block;
+    background: 0;
+    vertical-align: middle;
+    margin-right: 0.3rem;
   }
-  .checkbox:checked + .todo-item::after {
+
+  .checkbox:checked+.todo-item::after {
     content: "";
     height: 5px;
     width: 8px;
@@ -121,12 +206,12 @@
     top: 8px;
     transform: rotate(-45deg);
   }
-  .checkbox:checked + .todo-item {
+
+  .checkbox:checked+.todo-item {
     text-decoration: line-through;
   }
-  
+
   .todos-list .list-item {
-    /* background: rgba(177, 176, 177, 1); */
     padding: 0.7rem;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
@@ -138,11 +223,12 @@
   .todo-text {
     word-break: break-all;
   }
-  
+
   .buttons {
     display: flex;
     align-items: start;
   }
+
   .btn-delete {
     height: 26px;
     min-width: 17px;
@@ -156,35 +242,26 @@
     margin-right: 0.4rem;
     display: block;
   }
+
   .delete-icon {
     height: 30px;
     width: 30px;
     display: block;
   }
-.container {
-  width: 100%;
-  display: flex;
-  align-items: center;
-}
-.added-time {
-  min-width: 131px;
-  padding-left: 2rem;
-  align-self: start;
-}
-.date {
-  font-size: 0.8rem;
-  color: #a2a2a2;
-}
-  .title {
+
+  .container {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
   }
-  .warning {
-    font-family: inherit;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #D92F23;
+
+  .added-time {
+    min-width: 131px;
+    padding-left: 2rem;
+    align-self: start;
   }
-  .invalid-input {
-    border: 1px solid #D92F23;
+
+  .date {
+    font-size: 0.8rem;
+    color: #a2a2a2;
   }
