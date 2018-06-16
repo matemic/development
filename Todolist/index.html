@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>        
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -8,30 +9,30 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Todolist</title>
 </head>
+
 <body>
-    <div class="bg"> 
-    <div class="wrapper">
-        <div class="form-wrapper">
-        <form class="todo-form" autocomplete="off">
-        <div class="form-row">
-            <div class="title">
-             <label for="description">Description</label>
-             <p class="counter"></p>
-             <div class="warning"></div>
-             </div>
-             <input type="text" placeholder="What would you like to do today?" 
-             class="description" id="description" required/>
-             <div class="task-filter"></div>
+    <div class="bg">
+        <div class="wrapper">
+            <div class="form-wrapper">
+                <form class="todo-form" autocomplete="off">
+                    <div class="row">
+                        <label class="form-title" for="description">Description</label>
+                        <div class="btn counter"></div>
+                    </div>
+                    <input type="text" placeholder="What would you like to do today?" class="description" id="description" />
+                    <div class="error"></div>
+                    <div class="row">
+                        <button class="btn btn-clear-all">Clear all</button>
+                        <input class="btn" id="submit" type="submit" value="Add task">
+                    </div>
+                </form>
+                <ul class="todos-list">
+
+                </ul>
             </div>
-        <input id="submit" type="submit" value="Add task">
-        </form>
-        <h2>To do</h2>
-        <ul class="todos-list"> 
-           
-        </ul>
+        </div>
     </div>
-      </div>
-    </div>
-      <script src="js/todo.js"></script>
+    <script src="js/todo.js"></script>
 </body>
+
 </html>
