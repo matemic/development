@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <title>Simple Calculator in Javascript</title>
+</head>
+<body>
+    <div class="warning"></div>
+    <div class="calc-area">
+    <div class="calc-header">
+            <button class="square clear-calc" data-calc="C">C</button>
+            <input placeholder="0" type="text" name="calcExpression" id="calcExpression" disabled="disabled">
+    </div>
+        <div class="row">
+            <button class="square" data-calc="7">7</button>
+            <button class="square" data-calc="8">8</button>
+            <button class="square" data-calc="9">9</button>
+            <button class="square js-oper" data-calc="/">/</button>
+        </div>
+        <div class="row">
+            <button class="square" data-calc="4">4</button>
+            <button class="square" data-calc="5">5</button>
+            <button class="square" data-calc="6">6</button>
+            <button class="square js-oper" data-calc="*">*</button>
+        </div>
+        <div class="row">
+            <button class="square" data-calc="1">1</button>
+            <button class="square" data-calc="2">2</button>
+            <button class="square" data-calc="3">3</button>
+            <button class="square js-oper" data-calc="-">-</button>
+        </div>
+        <div class="row">
+            <button class="square" data-calc="0">0</button>
+            <button class="square js-oper" data-calc=".">.</button>
+            <button class="square" data-calc="equal">=</button>
+            <button class="square js-oper" data-calc="+">+</button>
+        </div>
+    </div>
+</body>
+<script src="js/calc.js"></script>
+</html>
