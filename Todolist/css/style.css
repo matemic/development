@@ -29,6 +29,7 @@
     border-radius: 5px;
     padding: 1rem;
     letter-spacing: 3px;
+    transition: .2s linear;
   }
 
   /* FORM styles */
@@ -102,7 +103,7 @@
   }
 
   .description.invalid {
-    border-bottom: 2px solid rgba(251, 101, 101, 0.959);
+    border-bottom: 1px solid rgb(253, 93, 93);
     margin-top: 1rem;
     font-size: 1.5rem;
     animation: vibrate 0.2s ease;
@@ -111,9 +112,6 @@
   @keyframes vibrate {
     0% {
       transform: translate(0);
-    }
-    50% {
-      transform: translateY(20px);
     }
     100% {
       transform: translateY(10px);
@@ -145,26 +143,27 @@
   }
 
   .btn-clear-all,
-  input[type=submit] {
+  .btn-add,
+  .btn-filter-completed {
     margin: 1.5rem 0 1rem 0;
     background: #FFF;
     outline: none;
     cursor: pointer;
-    transition: all 0.2s linear;
   }
 
-  input[type=submit] {
+  .btn-add {
     margin: 1.5rem 0 1rem 0;
     width: 150px;
   }
 
-  input[type=submit]:hover,
-  input[type=submit]:focus,
+  .btn-add:hover,
+  .btn-add:focus,
   .btn-clear-all:hover,
-  .btn-clear-all:focus {
+  .btn-clear-all:focus,
+  .btn-filter-completed:hover,
+  .btn-filter-completed:focus {
     color: #FFF;
     background-color: #03827c;
-    transition: all 0.2s linear;
   }
 
   /* Styles for javascript generated markups */

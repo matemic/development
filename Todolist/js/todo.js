@@ -1,12 +1,12 @@
 const ToDoList = (function () {
   const inputField = document.getElementById('description');
-  const btnSubmit = document.getElementById('submit');
   const ulList = document.querySelector('.todos-list');
   const counter = document.querySelector('.counter');
   const btnClearAll = document.querySelector('.btn-clear-all');
   const error = document.querySelector('.error');
   const form = document.querySelector('.todo-form');
   const todos = JSON.parse(localStorage.getItem('todos')) || [];
+  let isCompleted = false;
   counter.textContent = `${todos.length} items left`;
 
   const updateTodosCount = (todos) => {
@@ -28,14 +28,14 @@ const ToDoList = (function () {
     localStorage.setItem('todos', JSON.stringify(todos));
   }
 
-  function throwError() {
+  function throwError(text) {
     inputField.classList.add('invalid');
     error.classList.add('active');
-    error.textContent = 'You have to add something!';
+    error.textContent = text;
     setTimeout(() => {
       inputField.classList.remove('invalid');
       error.classList.remove('active');
-    }, 1300);
+    }, 2000);
   }
 
   function validateInput(evt) {
@@ -43,15 +43,15 @@ const ToDoList = (function () {
     const inputValue = inputField.value;
 
     if (!inputValue.trim()) {
-      throwError();
+      throwError('You have to add something!');
       return;
     }
     addTask(inputValue);
+    evt.preventDefault();
     form.reset();
   }
 
   function updateList(todos) {
-    console.log(todos);
     ulList.innerHTML = '';
     todos.forEach((item, index) => {
       const listItem = createTodosList(item, index);
@@ -126,9 +126,6 @@ const ToDoList = (function () {
     return element;
   }
 
-  form.addEventListener('submit', validateInput);
-  // btnClearAll.addEventListener('click', clearAllTodos);
-
   function delegate(type, parent, targetSelector, callback) {
     parent.addEventListener(type, event => {
       let target = event.target;
@@ -142,8 +139,45 @@ const ToDoList = (function () {
     });
   };
 
+  const clearAllTodos = (e) => {
+    if (!todos.length) {
+      throwError('Nothing to clear!');
+      return;
+    }
+    todos.length = 0;
+    ulList.innerHTML = '';
+    updateTodosCount(todos);
+  }
 
+  const getCompletedTasks = () => {
+    return todos.filter(todo => todo.done);
+  }
+
+  const filterCompletedTasks = (evt) => {
+    const completedTasks = getCompletedTasks();
+    if (!todos.length) {
+      throwError('List is empty!');
+    }
+    if(!isCompleted) {
+      evt.target.textContent = 'All tasks';
+      updateList(completedTasks);
+      updateTodosCount(completedTasks);
+      isCompleted = !isCompleted;
+    }
+    else {
+      evt.target.textContent = 'Completed tasks';
+      updateList(todos);
+      updateTodosCount(todos);
+      isCompleted = !isCompleted;
+    }
+  }
+
+  form.addEventListener('submit', validateInput);
+  btnClearAll.addEventListener('click', clearAllTodos);
+  const btnFilterCompleted = document.querySelector('.btn-filter-completed');
+  btnFilterCompleted.addEventListener('click', filterCompletedTasks);
   delegate('click', ulList, '.btn-delete', removeTodo);
   delegate('click', ulList, '.todo-item', markAsDone);
+
   updateList(todos);
 })();
