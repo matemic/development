@@ -6,7 +6,8 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+		font-family: 'Roboto', sans-serif;
+		background-color: #dadada;
 }
 
 button {
@@ -21,22 +22,6 @@ button::-moz-focus-inner {
   }
 
 /* STYLING CALCULATOR */
-
-.warning {
-    font-size: 1.2rem;
-    color: #FFF;
-    width: 400px;
-    height: 60px;
-    background-color: rgba(240, 0, 0, 0.5);
-    position: absolute;
-    display: none;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    padding: 1rem;
-}
-
 .calc-area {
     display: flex;
     flex-direction: column;
@@ -49,46 +34,53 @@ button::-moz-focus-inner {
 .calc-area .square, .calc-area .js-oper {
     cursor: pointer;
     flex-basis: 25%;
-    font-size: 1.2rem;
+    font-size: 2rem;
     font-family: 'Roboto', sans-serif;
     display: flex;
     justify-content:center;
     padding: 1.5rem;
     background-color: #e6e6e6;
-    border: 1px solid #fffffa80;
+    border: 1px solid #2b2b1e80;
     transition: background 0.3s ease;
 }
 
-.calc-area .square:hover, 
-.calc-area .js-oper:hover,
-.calc-area .square:focus, 
-.calc-area .js-oper:focus {
+.calc-area .js-oper {
+	background-color: #524f4f;
+	color: #fff;
+}
+
+.calc-area .square.active {
     background-color: rgba(136, 136, 136, 0.75);
     color: #e6e6e6;
     transition: background 0.3s ease;
 }
 
 .calc-header {
-    display: flex;
-    align-items: center;
+		display: flex;
+		height: 170px;
     background: #009688;
-    padding: 2rem;
+		padding: 2rem;
+		font-size: 2rem;
     border-bottom: 1px solid rgba(136, 136, 136, 0.75);
 }
 .calc-header .clear-calc {
-    font-size: 1rem;
+		font-weight: bold;
     background-color: rgba(86, 81, 81, 0.75);
     color: #e6e6e6;
-    border: none;
+		border: none;
 }
 .calc-header input[type=text] {
     width: 100%;
-    padding: 1.5rem;
-    outline: none;
-    background: #e6dede;
-    border: none;
+		padding: 1.5rem;
+		outline: none;
+		font-size: 1.5rem;
+		background: #524f4f;
+		color: #c4bcbc;
+		border: none;
 }
 
-.row {
-    display: flex;
+.calc-keys {
+	display: flex;
+	flex-wrap: wrap;
 }
+
