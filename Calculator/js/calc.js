@@ -1,6 +1,5 @@
 const squares = document.querySelectorAll('.square');
 const display = document.getElementById('calcExpression');
-const warningInfo = document.querySelector('.warning-info');
 
 let isOper = false;
 let number1 = null;
@@ -8,9 +7,13 @@ let number2 = null;
 let displayVal = null;
 let operator = null;
 
+const updateScreen = (value) => {
+	display.value = value;
+};
+
 const calculateResult = (num1, oper) => {
+	number2 = parseFloat(displayVal);
 	let result = '';
-	number2 = parseFloat(display.value);
 	switch (oper) {
 	case '+': {
 		result = num1 + number2;
@@ -36,7 +39,9 @@ const calculateResult = (num1, oper) => {
 		return 'Nieprawidłowa operacja!';
 	}
 	}
-	display.value = result;
+	number1 = parseFloat(result);
+	updateScreen(number1);
+	console.log(`displayVal: ${displayVal}, Number1: ${number1}, Number2: ${number2}, isOper: ${isOper}, operator: ${operator}`);
 };
 
 const clearAll = () => {
@@ -46,6 +51,7 @@ const clearAll = () => {
 	number2 = null;
 	displayVal = null;
 	operator = null;
+	console.log(`displayVal: ${displayVal}, Number1: ${number1}, Number2: ${number2}, isOper: ${isOper}, operator: ${operator}`);
 };
 
 const handleDecimal = (dec) => {
@@ -55,20 +61,27 @@ const handleDecimal = (dec) => {
 };
 const addDigitToTheScreen = (digit) => {
 	displayVal = display.value;
-	if (display.value === '0') {
-		display.value = digit;
+	if (displayVal === '0') {
+		displayVal = digit;
 	} else {
-		display.value = displayVal + digit;
+		displayVal += digit;
 	}
+	if (number1 && isOper) {
+		calculateResult(number1, operator);
+	}
+	updateScreen(displayVal);
+	console.log(`displayVal: ${displayVal}, Number1: ${number1}, Number2: ${number2}, isOper: ${isOper}, operator: ${operator}`);
 };
 
 const handleOper = (oper) => {
 	if (!isOper) {
 		operator = oper;
 		isOper = !isOper;
-		number1 = parseFloat(display.value);
+		number1 = parseFloat(displayVal);
 		display.value = '0';
 	}
+	console.log(`displayVal: ${displayVal}, Number1: ${number1}, Number2: ${number2}, isOper: ${isOper}, operator: ${operator}`);
+	isOper = false;
 };
 
 const showDigitFromTheUser = (e) => {
@@ -88,6 +101,8 @@ const showDigitFromTheUser = (e) => {
 	if (evt.equal) {
 		calculateResult(number1, operator);
 	}
+	squares.forEach(square => square.classList.remove('active'));
+	e.target.classList.add('active');
 };
-// window.addEventListener('keydown', handleKeyboard);
+
 squares.forEach(square => square.addEventListener('click', showDigitFromTheUser));
