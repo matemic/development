@@ -11,27 +11,27 @@ const updateScreen = (value) => {
 	display.value = value;
 };
 
-const calculateResult = (num1, oper) => {
+const calculateResult = () => {
 	number2 = parseFloat(displayVal);
 	let result = '';
-	switch (oper) {
+	switch (operator) {
 	case '+': {
-		result = num1 + number2;
+		result = number1 + number2;
 		break;
 	}
 	case '-': {
-		result = num1 - number2;
+		result = number1 - number2;
 		break;
 	}
 	case '*': {
-		result = num1 * number2;
+		result = number1 * number2;
 		break;
 	}
 	case '/': {
 		if (number2 === 0) {
 			result = 'Nie można dzielić przez zero';
 		} else {
-			result = num1 / number2;
+			result = number1 / number2;
 		}
 		break;
 	}
@@ -41,7 +41,7 @@ const calculateResult = (num1, oper) => {
 	}
 	number1 = parseFloat(result);
 	updateScreen(number1);
-	console.log(`displayVal: ${displayVal}, Number1: ${number1}, Number2: ${number2}, isOper: ${isOper}, operator: ${operator}`);
+	console.log(`displayVal: ${displayVal}, Number1: ${number1}, Number2: ${number2}, isOper: ${isOper}, operator: ${operator} Result: ${result}`);
 };
 
 const clearAll = () => {
@@ -66,43 +66,63 @@ const addDigitToTheScreen = (digit) => {
 	} else {
 		displayVal += digit;
 	}
-	if (number1 && isOper) {
-		calculateResult(number1, operator);
-	}
+	isOper = false;
 	updateScreen(displayVal);
 	console.log(`displayVal: ${displayVal}, Number1: ${number1}, Number2: ${number2}, isOper: ${isOper}, operator: ${operator}`);
 };
 
 const handleOper = (oper) => {
+	operator = oper;
 	if (!isOper) {
-		operator = oper;
-		isOper = !isOper;
-		number1 = parseFloat(displayVal);
+		number1 = parseFloat(display.value);
 		display.value = '0';
+		isOper = true;
 	}
 	console.log(`displayVal: ${displayVal}, Number1: ${number1}, Number2: ${number2}, isOper: ${isOper}, operator: ${operator}`);
-	isOper = false;
 };
 
 const showDigitFromTheUser = (e) => {
+	squares.forEach(square => square.classList.remove('active'));
+	const key = String.fromCharCode(e.keyCode);
+	e.preventDefault();
 	const evt = e.target.dataset;
-	if (evt.calc) {
-		addDigitToTheScreen(evt.calc);
+	if (evt.calc || (key >= 0 && key <= 9)) {
+		addDigitToTheScreen(evt.calc || key);
 	}
-	if (evt.oper) {
-		handleOper(evt.oper);
+	if (evt.oper 	|| (e.keyCode === 187 || e.keyCode === 189 || e.keyCode === 191
+								|| e.keyCode === 56)) {
+		if (e.keyCode === 187 && e.shiftKey) {
+			handleOper('+');
+		} else if (e.keyCode === 189) {
+			handleOper('-');
+		} else if (e.shiftKey && e.keyCode === 56) {
+			handleOper('*');
+		} else if (e.keyCode === 191) {
+			handleOper('/');
+		} else {
+			handleOper(evt.oper);
+		}
 	}
-	if (evt.decimal) {
-		handleDecimal(evt.decimal);
+	if (evt.decimal || e.keyCode === 190) {
+		handleDecimal(evt.decimal || '.');
 	}
-	if (evt.clear) {
+	if (evt.clear || (e.keyCode === 27 || e.keyCode === 67)) {
 		clearAll();
 	}
-	if (evt.equal) {
-		calculateResult(number1, operator);
+	if (evt.equal || (e.keyCode === 187 && !e.shiftKey)) {
+		calculateResult();
 	}
-	squares.forEach(square => square.classList.remove('active'));
-	e.target.classList.add('active');
+
+	if (!evt.clear) {
+		e.target.classList.add('active');
+	}
 };
 
+const handleUserKeyBoard = (e) => {
+	console.log((e.keyCode));
+	console.log(e.target);
+	showDigitFromTheUser(e);
+};
+
+document.addEventListener('keydown', handleUserKeyBoard);
 squares.forEach(square => square.addEventListener('click', showDigitFromTheUser));
