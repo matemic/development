@@ -62,6 +62,11 @@ body {
 	border-radius: 0 0 250px 0;
 }
 
+.green.active { background-color: lightgreen; cursor:pointer;}
+.red.active { background-color: tomato; cursor:pointer;}
+.yellow.active { background-color: yellow; cursor:pointer;}
+.blue.active { background-color: lightblue; cursor:pointer;}
+
 .simon-panel {
 	width: 300px;
 	height: 300px;
